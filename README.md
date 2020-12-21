@@ -41,7 +41,7 @@ To emulate the edge layer setup, one desktop machine with 8 GB RAM and Intel 3rd
 5. matplotlib
 6. numpy
 7. pandas
-
+8. tornado >= 6.0
 
 ## Instructions 
 
@@ -82,8 +82,9 @@ The edge layer has been simulated using CupCarbon Simulator. All edge related im
 The scripts for deploying the applicaiton infrastructure layer can be found inside the folder *Application_Layer**
 
 1. *Goal_Parser.py* implements a python class for parsing user goals that are sent as REST request from the users. These will be based on the goal model as defined in the paper. The responsibility of the Parser is to parse the goals to understand the required functionalities.
+2. *service_manager.py* is a tornado web service. It contains algorithm for service selection which uses the ranking from adaptation infrastructure layer. Update "localhost" to the ip address of the respective microservices.
+3. *service_discovery/app.py* is another tornado based web service. It supports east-west service discovery among microservice based on ranking from adaptation infrastructure layer for discovering microservices.
 
-2. *service_manager.py* is a tornado web service. It contains algorithm for service selection. Update "localhost" to the ip address of the respective microservices
 
 ### User Goal Request Simulation
 
