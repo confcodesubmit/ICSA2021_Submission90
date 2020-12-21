@@ -117,7 +117,7 @@ All the scripts realted to this layer can be found inside the folder *Adaptation
 
 The scripts for replicating the results can be found inside the folder *Plot_Generation*
 
-1. The mysql file containing the results of the experiment can be found inside *Plot_Generation/mysql_csv*. Import this csv file into a mysql table, *user_goal_response_time"*. This table has the following schema
+1. The mysql file containing the results of the experiment (*user_goals_rt_experiment.csv*) can be found inside *Plot_Generation/. Import this csv file into a mysql table, *user_goal_response_time"*. This table has the following schema
 
 ![MySQL Schema](mysql_schema.png)
 
