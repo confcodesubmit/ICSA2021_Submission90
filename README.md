@@ -118,16 +118,7 @@ The scripts for replicating the results can be found inside the folder *Plot_Gen
 
 1. The mysql file containing the results of the experiment can be found inside *Plot_Generation/mysql_csv*. Import this csv file into a mysql table, *user_goal_response_time"*. This table has the following schema
 
-+------------+--------------+------+-----+-------------------+-------------------+
-| Field      | Type         | Null | Key | Default           | Extra             |
-+------------+--------------+------+-----+-------------------+-------------------+
-| id         | int(11)      | NO   | PRI | NULL              | auto_increment    |
-| goal       | varchar(100) | YES  |     | NULL              |                   |
-| goal_type  | varchar(100) | YES  |     | NULL              |                   |
-| experiment | varchar(100) | YES  |     | NULL              |                   |
-| latency    | double       | YES  |     | NULL              |                   |
-| created_at | timestamp    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
-+------------+--------------+------+-----+-------------------+-------------------+
+![MySQL Schema](mysql_schema.png)
 
 2. *iot_energy* contains the energy consumed by different approaches for a time period of 18000 seconds
 3. *plots/result_plots* contains the generated plots which have been presented in the paper
