@@ -36,6 +36,17 @@ To emulate the edge layer setup, one desktop machine with 8 GB RAM and Intel 3rd
 5. Apache Kafka - https://kafka.apache.org/quickstart
 
 
+## Python Package requirements
+
+1. asyncio
+2. kafka-python
+3. elasticsearch
+4. mysql-connector-python
+5. matplotlib
+6. numpy
+7. pandas
+
+
 
 ## Running Microservices as Docker Containers:
 
@@ -49,7 +60,31 @@ sudo docker run -e PORT_NUM=port ES_HOST=localhost -it --name image -p port:port
 
 The ES_HOST in the previous statement is an argument to specify the IP of the elasticsearch instance and port denotes the port where the webservice listens to. To run multiple instances of the same microservices, simply keep running them in different ports by changing the values for port argument
 
-## Edge Layer
+## User Goal Request Simulation
+
+All the user related script can be found inside the folder *user_simulation* This is used for simulating the user goal requests
+The goals can be found in the file *main_user_goal_file.txt*
+
+1. *async_test.py* can be run to simulate the user requests to XYZ application that uses dynamic goals. 
+2. *static_application_simulator.py* can be run to simulate user requests to XYZ application with predefind static flow
+
+**Note:** In both the above scripts, update the "localhost" to ip address of the corresponding servers where microservices are hosted
+
+## Edge and Fog Layer
+
+The edge layer has been simulated using CupCarbon Simulator. All edge related implementation can be found in the folder IoT_Simulation_Adaptation. Open the folder and follow the below steps:
+
+1. CupCarbon-master_4.0 contains the modified source code of cupcarbon. The application can be started by running cupcarbon.java. Inside the source folder, go to  senscript_functions/Functions.java, add the path for "config.txt" in line 209
+2. Run the CupCarbon from the modified source code (First import the CupCarbon-Master_4.0 as an eclipse project, Same can be done if you are uisng IntelliJ IDE)
+3. XYZ_Case contains the cupCarbon project of the case study mentioned in the paper. It can be opened by opening the XYZ.cup filefrom the open project option available in the cupCarbon UI. Further details can be found in www.cupcarbon.com The natevents folder contains the sensor datasets used which was generated based on real observations of the case study which followed a poisson distribution.
+4. Open the XYZ_Case project from the open project option in cupCarbon UI
+5. Set the simulation parameters in cupCabron to five hours (18000 s), mark the result field for 60s and run the Simulation
+6. Immidiately run the programs CupCarbon_Energy_Streamer.py and adaptation_handler.py
+
+## Cloud Layer
+
+
+
 
 
 
