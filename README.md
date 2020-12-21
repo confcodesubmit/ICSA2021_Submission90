@@ -53,7 +53,7 @@ python <filename>.py
 
 The complete experiment was executed for a period of 18000 seconds
 
-### Microservice Layer (Running Microservices as Docker Containers):
+### Microservice Layer (Running Microservices in Docker Containers):
 
 Each folder with "_service_" in the name essentially is a microservice. To run the service move into the directory using a _cd_ command and execute the following:
 
